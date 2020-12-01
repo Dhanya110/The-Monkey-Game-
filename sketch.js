@@ -20,17 +20,17 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   
   //creating background 
-  background=createSprite(0,0,windowWidth-0, windowHeight);
+  background=createSprite(0,0,windowWidth, windowHeight);
   background.addImage("abc",backgroundImage);
   background.velocityX=-2;
   
   //creating ground
-  ground = createSprite(width/2,height-200,width,2);
+  ground = createSprite(width/2,height-300,width,2);
   ground.velocityX=-2;
   ground.visible=true;
   
   //creating monkey/player
-  monkey=createSprite(100,300,10,10);
+  monkey=createSprite(100,height-300,10,10);
   monkey.addAnimation("abc",monkey_running);
   monkey.setCollider("rectangle",0,0,180,560);
   monkey.scale=0.15;
@@ -89,7 +89,7 @@ function draw() {
        }
          monkey.velocityY = monkey.velocityY + 0.8
          monkey.collide(ground);
-         console.log(gamer);
+       
     
       //Transfer to end state
       if ( gamer===2){
@@ -97,6 +97,7 @@ function draw() {
         gameState=END;
      }
       drawSprites();
+      
       // display of score
       fill ("white");
       textSize(20);
