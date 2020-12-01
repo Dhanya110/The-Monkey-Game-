@@ -20,7 +20,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   
   //creating background 
-  background=createSprite(0,0,windowWidth, windowHeight);
+  background=createSprite(0,0,windowWidth+300, windowHeight);
   background.addImage("abc",backgroundImage);
   background.velocityX=-2;
   
