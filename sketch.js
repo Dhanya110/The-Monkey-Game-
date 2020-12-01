@@ -25,7 +25,7 @@ function setup() {
   background.velocityX=-2;
   
   //creating ground
-  ground = createSprite(width/2,height-300,width,2);
+  ground = createSprite(width/2,height-500,width,2);
   ground.velocityX=-2;
   ground.visible=true;
   
