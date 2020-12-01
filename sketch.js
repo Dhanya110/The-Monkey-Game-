@@ -30,7 +30,7 @@ function setup() {
   ground.visible=true;
   
   //creating monkey/player
-  monkey=createSprite(100,height-300,10,10);
+  monkey=createSprite(100,height-500,10,10);
   monkey.addAnimation("abc",monkey_running);
   monkey.setCollider("rectangle",0,0,180,560);
   monkey.scale=0.15;
