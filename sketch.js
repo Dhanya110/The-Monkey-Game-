@@ -28,9 +28,9 @@ function setup() {
   background.velocityX=-2;
   
   //creating ground
-  ground = createSprite(0,360,width,2);
+  ground = createSprite(0,360,800,2);
   ground.velocityX=-2;
-  ground.visible=false;
+  ground.visible=true;
   
   //creating monkey/player
   monkey=createSprite(100,360,10,10);
@@ -128,7 +128,7 @@ function draw() {
 function bananas() {
   //write code here to spawn the bananas
    if (frameCount % 80 === 0) {
-     banana = createSprite(700,100,40,10);
+     banana = createSprite(600,100,40,10);
     banana.y = Math.round(random(120,200));
     banana.addImage(bananaImage);
     banana.scale = 0.1;
@@ -142,8 +142,8 @@ function bananas() {
    }
 
 function obstacles() {
-  if (frameCount % 300 === 0){
-   var obstacle = createSprite(400,300,10,40);
+  if (frameCount % 100 === 0){
+   var obstacle = createSprite(400,330,10,40);
     obstacle.addImage("abc",obstacleImage);
     obstacle.scale=0.12
    obstacle.velocityX = -6;
