@@ -17,20 +17,23 @@ obstacleImage=loadImage("stone.png");
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+
+  createCanvas(800,400);
+ 
   
   //creating background 
-  background=createSprite(0,0,windowWidth+300, windowHeight);
+  background=createSprite(0,0,800,400);
   background.addImage("abc",backgroundImage);
+  background.scale=1.5
   background.velocityX=-2;
   
   //creating ground
-  ground = createSprite(width/2,height-800,width,2);
+  ground = createSprite(0,360,width,2);
   ground.velocityX=-2;
-  ground.visible=true;
+  ground.visible=false;
   
   //creating monkey/player
-  monkey=createSprite(100,height-500,10,10);
+  monkey=createSprite(100,360,10,10);
   monkey.addAnimation("abc",monkey_running);
   monkey.setCollider("rectangle",0,0,180,560);
   monkey.scale=0.15;
@@ -101,13 +104,13 @@ function draw() {
       // display of score
       fill ("white");
       textSize(20);
-      text("Score:"+score,width/2+150,height/2-230);
+      text("Score:"+score,600,50);
         
 }
  else if (gameState === END) {
    textSize(30)
    fill("White")
-   text("GAME OVER",width/2-100,height/2-80); 
+   text("GAME OVER",250,230); 
   monkey.visible=false;
   monkey.velocityX=0;
    monkey.velocityY=0;
@@ -125,7 +128,7 @@ function draw() {
 function bananas() {
   //write code here to spawn the bananas
    if (frameCount % 80 === 0) {
-     banana = createSprite(width-200,height-100,40,10);
+     banana = createSprite(700,100,40,10);
     banana.y = Math.round(random(120,200));
     banana.addImage(bananaImage);
     banana.scale = 0.1;
